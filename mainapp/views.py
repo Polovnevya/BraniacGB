@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.views.generic import TemplateView
 
 # Create your views here.
@@ -16,6 +18,8 @@ class NewsPageView(TemplateView):
         # Create your own data
         context["news_title"] = "Громкий новостной заголовок"
         context["news_preview"] = "Предварительное описание, которое заинтересует каждого"
+        context["range"] = range(5)
+        context["datetime_obj"] = datetime.now()
         return context
 
 

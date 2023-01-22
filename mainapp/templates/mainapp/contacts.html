@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load email_to_link %}
 {% block content %}
   <p>
     <div class="jumbotron jumbotron-fluid">
@@ -45,7 +47,7 @@
               </ul>
               <ul class="list-unstyled">
                 <li>Email</li>
-                <li><strong>geeklab@spb.ru</strong></li>
+                <li><strong>{{ 'geeklab@spb.ru'|email_to_link }}</strong></li>
               </ul>
               <ul class="list-unstyled">
                 <li>Адрес</li>
@@ -87,7 +89,7 @@
               </ul>
               <ul class="list-unstyled">
                 <li>Email</li>
-                <li><strong>geeklab@kz.ru</strong></li>
+                <li><strong>{{ 'geeklab@kz.ru'|email_to_link }}</strong></li>
               </ul>
               <ul class="list-unstyled">
                 <li>Адрес</li>
@@ -108,6 +110,7 @@
               Покрова Пресвятой
               Богородицы на Рву</a><a
                 href="https://yandex.ru/maps/213/moscow/category/museum/184105894/?utm_med
+                  © geekbrains.ru 46
                   ium=mapframe&utm_source=maps"
                 style="color:#eee;font-size:12px;position:absolute;top:14px;">Музей
                 в Москве</a><iframe
@@ -124,7 +127,7 @@
               </ul>
               <ul class="list-unstyled">
                 <li>Email</li>
-                <li><strong>geeklab@msk.ru</strong></li>
+                <li><strong>{{ 'geeklab@msk.ru'|email_to_link }}</strong></li>
               </ul>
               <ul class="list-unstyled">
                 <li>Адрес</li>
