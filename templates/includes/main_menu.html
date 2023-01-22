@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="{% url 'mainapp:main_page' %}">
       <img src="{% static 'img/logo.png' %}" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -14,12 +14,12 @@
       <ul class="navbar-nav mr-auto">
 
         <li
-          class="nav-item {% if request.resolver_match.view_name == 'mainapp:mainapp.views.NewsPageView' %}active{% endif %}">
-          <a class="nav-link" href="news.html">Новости</a>
+          class="nav-item {% if request.resolver_match.view_name == 'mainapp:news' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'mainapp:news' %}">Новости</a>
         </li>
         <li
-          class="nav-item {% if request.resolver_match.view_name == 'mainapp:mainapp.views.CoursesPageView' %}active{% endif %}">
-          <a class="nav-link" href="courses_list.html">Курсы</a>
+          class="nav-item {% if request.resolver_match.view_name == 'mainapp:courses' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'mainapp:courses' %}">Курсы</a>
         </li>
 
         <li class="nav-item dropdown">
@@ -43,8 +43,8 @@
 
 
         <li
-          class="nav-item {% if request.resolver_match.view_name == 'mainapp:mainapp.views.ContactsPageView' %}active{% endif %}">
-          <a class="nav-link" href="contacts.html">Контакты</a>
+          class="nav-item {% if request.resolver_match.view_name == 'mainapp:contacts' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'mainapp:contacts' %}">Контакты</a>
         </li>
       </ul>
       <span><a href="#">󰐮</a> <i class="fas fa-grip-lines-vertical"></i>
