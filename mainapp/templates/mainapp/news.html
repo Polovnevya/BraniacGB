@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% block content %}
   <div class="row">
@@ -15,9 +16,11 @@
     </div>
     <div class="col-lg-4">
 
+
       <div class="row justify-content-center align-items-center mt-3 mb-n3">
         <nav aria-label="Page navigation example">
           <ul class="pagination">
+
             <li class="page-item"><a class="page-link"
               href="#">Previous</a></li>
             <li class="page-item"><a class="page-link" href="{% url
@@ -26,8 +29,11 @@
               'mainapp:news_paginator' page=2 %}">2</a></li>
             {# <li class="page-item"><a class="page-link" href="{% url
         'mainapp:news_paginator' three %}">3</a></li> #}
+
             <li class="page-item"><a class="page-link" href="#">Next</a></li>
           </ul>
         </nav>
       </div>
+
 {% endblock content %}
+
