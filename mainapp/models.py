@@ -1,8 +1,11 @@
 from django.db import models
 
 
+class BaseModelManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(deleted=False)
 class BaseModel(models.Model):
-
+    objects = BaseModelManager()
     created = models.DateTimeField(auto_now_add=True, verbose_name="Created", editable=False)
     updated = models.DateTimeField(auto_now=True, verbose_name="Edited", editable=False)
     deleted = models.BooleanField(default=False)
@@ -24,11 +27,9 @@ class News(BaseModel):
     body = models.TextField(blank=True, null=True, verbose_name="Body")
     body_as_markdown = models.BooleanField(default=False, verbose_name="As markdown")
 
-class CoursesManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(deleted=False)
+
 class Courses(BaseModel):
-    objects = CoursesManager()
+
     name = models.CharField(max_length=256, verbose_name="Name")
     description = models.TextField(verbose_name="Description", blank=True, null=True)
     description_as_markdown = models.BooleanField(verbose_name="As markdown", default=False)
