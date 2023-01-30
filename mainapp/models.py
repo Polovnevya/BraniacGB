@@ -1,8 +1,5 @@
 from django.db import models
 
-<<<<<<< HEAD
-# Create your models here.
-=======
 
 class BaseModelManager(models.Manager):
     def get_queryset(self):
@@ -76,4 +73,3 @@ class CourseTeachers(models.Model):
     def delete(self, *args):
         self.deleted = True
         self.save()
->>>>>>> fda044f2d6500fb5833231d56dd389d15e24ab1d
