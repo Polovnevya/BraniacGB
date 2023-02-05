@@ -49,7 +49,8 @@ class Courses(BaseModel):
     cost = models.DecimalField(max_digits=8, decimal_places=2, verbose_name="Cost", default=0)
     cover = models.CharField(max_length=25, default="no_image.svg", verbose_name="Cover")
 
-
+    def __str__(self) -> str:
+        return f"{self.pk} {self.name}"
 
 class CourseFeedback(BaseModel):
     RATING = ((5, "⭐⭐⭐⭐⭐"), (4, "⭐⭐⭐⭐"), (3, "⭐⭐⭐"), (2, "⭐⭐"), (1, "⭐"))
