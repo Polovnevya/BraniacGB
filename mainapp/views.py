@@ -34,7 +34,6 @@ class CoursesListView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["objects"] = mainapp_models.Courses.objects.all()[:7]
-        print(context["objects"])
         return context
 
 
@@ -55,7 +54,3 @@ class ContactsPageView(TemplateView):
 
 class DocSitePageView(TemplateView):
     template_name = "mainapp/doc_site.html"
-
-
-class LoginPageView(TemplateView):
-    template_name = "mainapp/login.html"
